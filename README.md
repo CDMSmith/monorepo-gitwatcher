@@ -17,7 +17,7 @@ example of a pipeline job
 stage('example job') {
             when {
                 expression {
-                    return "true" == sh(returnStdout: true, script: './tools/detectGitChanges.sh path/to/folders.watch | tail -n 1').trim()
+                    return "true" == sh(returnStdout: true, script: './tools/detectGitChanges.sh path/to/folders.watch path/to/another/folders.watch | tail -n 1').trim()
                 }
             }
             steps {
