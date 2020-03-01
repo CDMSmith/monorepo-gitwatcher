@@ -1,8 +1,6 @@
 #!/bin/bash -e
-watch_files=${1}
-
 oldIFS=${IFS}
-IFS=$'\r\n' GLOBIGNORE='*' command eval 'IGNORE_FILES=($(cat $watch_files))'
+IFS=$'\r\n' GLOBIGNORE='*' command eval 'IGNORE_FILES=($(cat $@))'
 IFS=${oldIFS}
 trigger_build="false"
 
